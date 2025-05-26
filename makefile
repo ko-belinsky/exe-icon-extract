@@ -57,4 +57,3 @@ install-script:
 	@mkdir -p "$(INSTALL_DIR)" >/dev/null 2>&1
 	@cp -f "$(ICON_SCRIPT)" "$(INSTALL_DIR)/" >/dev/null 2>&1
 	@chmod +x "$(INSTALL_DIR)/$(ICON_SCRIPT)" >/dev/null 2>&1
-	@echo "Скрипт установлен в $(INSTALL_DIR)"
