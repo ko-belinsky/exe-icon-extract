@@ -1,10 +1,9 @@
-# Makefile для установки скрипта извлечения иконок (тихая версия)
-
 .PHONY: install check-icoutils install-gnome install-kde detect-de install-script
 
 INSTALL_DIR = $(HOME)/.local/bin
 ICON_SCRIPT = exe-icon-extract.sh
 DESKTOP_FILE = exe-icon-extract.desktop
+KDE_SERVICEMENU_DIR = $(HOME)/.local/share/kio/servicemenus
 
 # Основная цель установки
 install:
@@ -47,9 +46,9 @@ install-gnome: install-script
 
 # Установка для KDE
 install-kde: install-script
-	@mkdir -p "$(HOME)/.local/share/kservices5/servicemenus" >/dev/null 2>&1
-	@cp -f "$(DESKTOP_FILE)" "$(HOME)/.local/share/kservices5/servicemenus/" >/dev/null 2>&1
-	@echo "Desktop-файл скопирован для KDE..."
+	@mkdir -p "$(KDE_SERVICEMENU_DIR)" >/dev/null 2>&1
+	@cp -f "$(DESKTOP_FILE)" "$(KDE_SERVICEMENU_DIR)/" >/dev/null 2>&1
+	@echo "Desktop-файл скопирован в KDE servicemenus..."
 	@kbuildsycoca6 >/dev/null 2>&1 || true
 
 # Установка основного скрипта
