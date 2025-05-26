@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/x-ms-dos-executable;
+Actions=ExtractIcon;
+X-KDE-Priority=TopLevel
+Icon=image-x-generic
+
+[Desktop Action ExtractIcon]
+Name=Извлечь иконку
+Icon=image-x-ico
+Exec=$HOME/.local/bin/exe-icon-extract.sh %f
